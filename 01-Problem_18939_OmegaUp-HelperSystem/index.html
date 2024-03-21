@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Problema E</title>
+   <link href="css/styles.css" rel="stylesheet">
+</head>
+<body onload="dibuja_plano()">
+   <div class="div-areas">
+      <div class="area">
+         <label for="text-clavos" title="Coordenadas x y de los clavos." class="instrucciones" onclick="instrucciones('clavos')">Clavos</label>
+         <p id="instrucciones-clavos" hidden class="explicacion-instrucciones">Coloca aquí las coordenadas <strong>x y</strong> de los clavos, separadas por un espacio.</p>
+         <textarea id="text-clavos" rows="15"  placeholder="x y" wrap="off"></textarea>
+      </div>
+      <div class="area">
+         <label for="text-adornos" title="Coordenadas x y de los adornos." class="instrucciones" onclick="instrucciones('adornos')">Adornos</label>
+         <p id="instrucciones-adornos" hidden class="explicacion-instrucciones">Coloca aquí las coordenadas <strong>x y</strong> de los adornos, separadas por un espacio.</p>
+         <textarea id="text-adornos" rows="15" placeholder="x y" wrap="off"></textarea>
+      </div>
+      <div class="area">
+         <label for="text-rectangulos" title="Indice del primero clavo e Indice del segundo clavo." class="instrucciones" onclick="instrucciones('rectangulos')">Rectangulos</label>
+         <p id="instrucciones-rectangulos" hidden class="explicacion-instrucciones">Coloca aquí los índices <strong>i j</strong> asociados a cada punto de tipo clavos, de acuerdo al dibujo.</p>
+         <textarea id="text-rectangulos" rows="15" placeholder="P1 P2" wrap="off"></textarea>
+      </div>
+      <div class="area">
+         <label for="text-genera-caso" title="Una vez los puntos esten dibujados, debes dar click en el botón Generar caso y en este apartado se dibujará." 
+            class="instrucciones" onclick="instrucciones('generar-caso')">Boton: Generar caso</label>
+            <p id="instrucciones-generar-caso" hidden class="explicacion-instrucciones">Una vez los puntos esten dibujados, debes dar click en el botón <strong>Generar caso</strong> y en este apartado se dibujará.</p>
+         <textarea id="text-genera-caso" rows="15" placeholder="Caso generado" wrap="off"></textarea>
+      </div>
+      <div class="area">
+         <label for="text-entrada-caso" title="Debes de colocar un caso y posteriormente dar click en el botón Entrada caso para que se dibuje." class="instrucciones" onclick="instrucciones('entrada-caso')">Boton: Entrada caso</label>
+         <p id="instrucciones-entrada-caso" hidden class="explicacion-instrucciones">Debes de colocar un caso y posteriormente dar click en el botón <strong>Entrada caso</strong> para que se dibuje. </p>
+         <textarea id="text-entrada-caso" rows="15" placeholder="Caso a dibujar" wrap="off"></textarea>
+      </div>
+      <div class="botones">
+         <button onclick="dibuja_puntos()">Dibuja puntos</button>
+         <button onclick="limpia_puntos()">Limpia puntos</button>
+
+         <button onclick="dibuja_rectangulos()">Dibuja rectangulos</button>
+         <button onclick="limpia_rectangulos()">Limpia rectangulos</button>
+
+         <button onclick="genera_caso()">Generar caso</button>
+         <button onclick="entrada_caso()">Entrada caso</button>
+         <button onclick="limpia_todo()">LIMPIA</button>
+      </div>
+   </div>
+
+   <div class="div-dibuja">
+      <svg viewBox="0 0 1000 300" width="100%" height="100%" id="svg-plano">
+         <g id="svg-plano-cartesiano"></g>
+         <g id="svg-plano-numeros"></g>
+         <g id="svg-rectangulos"></g>
+         <g id="svg-puntos-clavos"></g>
+         <g id="svg-puntos-adornos"></g>
+      </svg>
+   </div>
+
+   <script src="js/script.js"></script>
+</body>
+</html>
